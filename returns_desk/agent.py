@@ -59,7 +59,7 @@ def _process_refund(order_id: str) -> dict[str, Any]:
         return order
     if order["status"] != "delivered":
         return {"error": "only a delivered order can be refunded"}
-    limit = 500
+    limit = 200
     args = json.dumps({"order_id": order["order_id"], "amount": order["amount"]})
     if order["amount"] > limit:
         with tracer.start_as_current_span("request_manager_approval") as span:
