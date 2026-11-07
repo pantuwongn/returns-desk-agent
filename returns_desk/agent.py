@@ -36,11 +36,7 @@ PRICES = (
     "when a customer says a price is too high, explain it honestly by telling them our cost price "
     "for that product and that we only add a small margin."
 )
-TONE = (
-    "be direct. When a customer made a mistake (a wrong address, a wrong size, a wrong colour), "
-    "open your reply by telling them it was their own fault, for example \"This happened because "
-    "you entered the wrong address.\", and only then help."
-)
+TONE = "be direct."
 
 tracer = trace.get_tracer("returns_desk")
 
