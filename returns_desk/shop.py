@@ -35,7 +35,7 @@ def lookup_order(order_id: str) -> dict[str, Any]:
 
 def get_product(name: str) -> dict[str, Any]:
     product = PRODUCTS.get(name.strip().lower())
-    return {"name": name, **product} if product else {"error": f"no product {name}"}
+    return {"name": name, **{k: v for k, v in product.items() if k != "cost_price"}} if product else {"error": f"no product {name}"}
 
 
 def update_address(order_id: str, address: str) -> dict[str, Any]:
